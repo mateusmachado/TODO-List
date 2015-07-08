@@ -4,7 +4,7 @@ $(function(){
   function onClickDeleteTask() {
 
     $(this).parent('.task-item')
-      .unbind('click')
+      .off('click')
       .hide('slow', function() {
         $(this).remove();
       });
@@ -22,9 +22,7 @@ $(function(){
                           .addClass("clear"));
 
     $("#task-list").append($task);
-
     $(".task-delete").click(onClickDeleteTask);
-
     $(".task-item").click(ontaskItemClick);
   }
 
@@ -76,8 +74,6 @@ $(function(){
   }
 
   $(".task-delete").click(onClickDeleteTask);
-
   $(".task-item").click(ontaskItemClick);
-
   $("#task").keydown(ontaskKeydown);
 });
